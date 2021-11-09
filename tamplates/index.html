@@ -1,0 +1,45 @@
+{{ define "index" }}
+
+{{ template "header" }}
+
+<main role="main" class="inner cover">
+    <h1>Главная страница</h1>
+
+    {{ range . }}
+    <div class="alert alert-danger">
+        <h2>{{ .Title }}</h2>
+        <p> {{ .Anons }} </p>
+        <a href="/post/{{ .Id }}" class="btn btn-danger">читать далее</a>
+    </div>
+    {{ else }}
+    <p class="lead">Статей нет!</p>
+    {{ end }}
+
+    <!-- <p class="lead">Пользователь: {{ .Name }} <br> Возраст: {{ .Age }} <br> Деньги: {{ .Money }} </p>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque assumenda officia ad molestias impedit consequuntur tempore ducimus voluptatum laboriosam mollitia, reiciendis non temporibus hic!</p>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, minima cupiditate. Illo corrupti sunt perspiciatis modi sit deleniti tenetur debitis, ducimus ullam excepturi? Odit in sit beatae, nulla non mollitia?</p>
+    <div class="hi">
+
+        {{ if eq .Name "FD" }}
+        <span>Привет</span>
+        {{ else }}
+        <span>А ты кто?</span>
+        {{ end }}
+
+
+        <p>Hobbies</p>
+        {{ range .Hobbies }}
+        <p class="lead"><b> {{ . }} </b></p>
+        {{ else }}
+        <p class="lead"><b>у нас нет записей</b></p>
+        {{ end }}
+    </div> -->
+
+    <p class="lead">
+        <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Узнать больше</a>
+    </p>
+</main>
+
+{{ template "footer" }}
+
+{{ end }}
